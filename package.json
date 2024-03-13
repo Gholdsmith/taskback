@@ -1,0 +1,19 @@
+{
+  "name": "taskback",
+  "version": "1.0.0",
+  "description": "taskManager backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Gholdsmith/taskback.git"
+  },
+  "author": "raynald",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gholdsmith/taskback/issues"
+  },
+  "homepage": "https://github.com/Gholdsmith/taskback#readme"
+}
