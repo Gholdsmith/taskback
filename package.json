@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/Gholdsmith/taskback/issues"
   },
-  "homepage": "https://github.com/Gholdsmith/taskback#readme"
+  "homepage": "https://github.com/Gholdsmith/taskback#readme",
+  "keywords": []
 }
