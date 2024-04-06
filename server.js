@@ -40,6 +40,35 @@ app.get('/tasks', async (req, res) => {
   res.status(200).send(tasks);
 });
 
+// Endpoint pour récupérer une tâche
+app.get('/tasks/:id', async (req, res) => {
+  const tasks = await Task.findOne({ _id: req.params.id });
+  res.status(200).send(tasks);
+});
+
+
+//Mise à jour de la tâche
+app.put('/tasks/:id', async (req, res) => {
+  console.log('Requête PUT reçue avec les données suivantes:', req.body);
+  console.log('ID de la tâche:', req.params.id);
+
+  try {
+    const result = await Task.updateOne({ _id: req.params.id }, req.body);
+    console.log('Résultat de l\'opération de mise à jour:', result);
+    if (result.matchedCount === 0) {
+      console.log(`Aucune tâche trouvé avec l'ID: ${req.params.id}`);
+      return res.status(404).send({ message: 'tâche non trouvée => ' + req.params.id });
+    }
+    if (result.modifiedCount === 0) {
+      console.log('Aucune modification apportée à la tâche (peut-être aucune donnée nouvelle ou tâche non trouvée).');
+      // Tu peux choisir de renvoyer un message différent ici si tu le souhaites.
+    }
+    res.status(200).send({ id: req.params.id, message: 'Tâche traitée avec succès' });
+  } catch (error) {
+    console.error('Erreur lors de la mise à jour de la tâche:', error);
+    res.status(500).send(error);
+  }
+});
 
 // Dans ton server.js ou dans un contrôleur dédié aux tâches
 app.delete('/tasks/:id', async (req, res) => {
