@@ -61,7 +61,7 @@ app.put('/tasks/:id', async (req, res) => {
     }
     if (result.modifiedCount === 0) {
       console.log('Aucune modification apportée à la tâche (peut-être aucune donnée nouvelle ou tâche non trouvée).');
-      // Tu peux choisir de renvoyer un message différent ici si tu le souhaites.
+
     }
     res.status(200).send({ id: req.params.id, message: 'Tâche traitée avec succès' });
   } catch (error) {
@@ -70,7 +70,7 @@ app.put('/tasks/:id', async (req, res) => {
   }
 });
 
-// Dans ton server.js ou dans un contrôleur dédié aux tâches
+// Dans  server.js ou dans un contrôleur dédié aux tâches
 app.delete('/tasks/:id', async (req, res) => {
   try {
     const result = await Task.deleteOne({ _id: req.params.id });
