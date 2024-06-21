@@ -1,7 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const app = express();
-const port = 3000;
+
+const PORT = process.env.PORT || 3000;
+
 
 app.use(express.json()); // Pour parser le JSON dans les requêtes
 app.use((req, res, next) => {
@@ -9,13 +11,16 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
   next();
-});
+  });
+  
+  
+  // Connect to MongoDB
+  const mongoDB = process.env.OBJECTROCKET_URL || 'mongodb://localhost:27017/todoDB';
+  mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(() => console.log('MongoDB connected'))
+    .catch(err => console.error('MongoDB connection error:', err));
 
-// Connexion à MongoDB
-mongoose.connect('mongodb://localhost:27017/todoDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+
 
 // Définir le schéma de la tâche
 const taskSchema = new mongoose.Schema({
@@ -85,7 +90,7 @@ app.delete('/tasks/:id', async (req, res) => {
 
 
 
-app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
 
