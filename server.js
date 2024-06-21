@@ -15,7 +15,7 @@ app.use((req, res, next) => {
   
   
   // Connect to MongoDB
-  const mongoDB = process.env.OBJECTROCKET_URL || 'mongodb://localhost:27017/todoDB';
+  const mongoDB = process.env.MONGODB_URI || 'mongodb://localhost:27017/todoDB';
   mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('MongoDB connected'))
     .catch(err => console.error('MongoDB connection error:', err));
