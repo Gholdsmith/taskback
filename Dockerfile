@@ -1,5 +1,5 @@
 # Utiliser une image de base officielle de Node.js
-FROM node:14
+FROM node:20
 
 # Installer pnpm
 RUN npm install -g pnpm
@@ -18,7 +18,7 @@ RUN pnpm install
 COPY . .
 
 # Exposer le port sur lequel l'application écoute
-EXPOSE 8080
+EXPOSE 3000
 
 # Démarrer l'application
 CMD [ "node", "server.js" ]
