@@ -49,8 +49,12 @@ const updateTask = async (req, res) => {
 
 
 const deleteTask = async (req, res) => {
+
+    console.log('ici on delete');
   try {
     const result = await Task.deleteOne({ _id: req.params.id });
+    console.log('Résultat de l\'opération de suppression:', result);
+
     if (result.deletedCount === 0) {
       return res.status(404).send({ message: 'Task not found' });
     }
