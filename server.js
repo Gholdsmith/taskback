@@ -1,7 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const logger = require('./logger');
+const bodyParser = require('body-parser');
 const app = express();
+
 
 const taskController = require('./controllers/taskController');
 const userController = require('./controllers/userController');
@@ -12,6 +15,18 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json()); // Pour parser le JSON dans les requêtes
 
 app.use(cors());
+
+app.use(bodyParser.json());
+
+app.post('/api/logs', (req, res) => {
+  const log = req.body;
+  if(log.level === 'ERROR'){
+    logger.error(log.message, log);
+  } else {
+    logger.info(log.message, log);
+  }
+  res.status(200).send({ status:'ok'});
+})
 
 // app.use((req, res, next) => {
 //   res.header('Access-Control-Allow-Origin', '*');
@@ -24,8 +39,11 @@ app.use(cors());
   // Connect to MongoDB
   const mongoDB = process.env.MONGODB_URI || 'mongodb://localhost:27017/todoDB';
   mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('MongoDB connected'))
-    .catch(err => console.error('MongoDB connection error:', err));
+    .then(() => logger.info('MongoDB connected'))
+    .catch(err => logger.error('MongoDB connection error:', err));
+
+
+
 
 
 app.post('/register', userController.register);
@@ -52,6 +70,6 @@ app.delete('/tasks/:id', taskController.deleteTask);
 
 
 app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  logger.info(`Server is running on http://localhost:${PORT}`);
 });
 

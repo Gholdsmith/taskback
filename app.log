@@ -1,0 +1,38 @@
+2024-07-23T19:15:42.122Z [info]: Server is running on http://localhost:3000
+2024-07-23T19:15:42.137Z [info]: MongoDB connected
+2024-07-23T19:19:00.032Z [info]: Server is running on http://localhost:3000
+2024-07-23T19:19:00.046Z [info]: MongoDB connected
+2024-07-23T19:19:17.235Z [info]: Requête PUT reçue avec les données suivantes:
+2024-07-23T19:19:17.236Z [info]: ID de la tâche:
+2024-07-23T19:19:17.244Z [info]: Résultat de l'opération de mise à jour:
+2024-07-23T19:19:33.717Z [info]: ici on delete
+2024-07-23T19:19:33.719Z [info]: Résultat de l'opération de suppression:
+2024-07-23T19:20:27.431Z [info]: Server is running on http://localhost:3000
+2024-07-23T19:20:27.448Z [info]: MongoDB connected
+2024-07-23T19:20:37.410Z [info]: ici on delete
+2024-07-23T19:20:37.415Z [info]: Résultat de l'opération de suppression:
+2024-07-23T19:27:26.213Z [info]: Server is running on http://localhost:3000
+2024-07-23T19:27:26.225Z [info]: MongoDB connected
+2024-07-23T19:27:41.203Z [info]: Requête PUT reçue avec les données suivantes:
+2024-07-23T19:27:41.203Z [info]: ID de la tâche:
+2024-07-23T19:27:41.209Z [info]: Résultat de l'opération de mise à jour:', [object Object]
+undefined
+undefined
+undefined
+undefined
+undefined
+{"level":"info","message":"Server is running on http://localhost:3000","timestamp":"2024-07-23T19:44:58.405Z"}
+{"level":"info","message":"MongoDB connected","timestamp":"2024-07-23T19:44:58.428Z"}
+{"__v":0,"_id":"6610de2d8fffbfa9148becde","completed":false,"level":"info","message":"Requête PUT reçue avec les données suivantes:","timestamp":"2024-07-23T19:45:14.236Z","title":"gérer les sousezezez"}
+{"level":"info","message":"ID de la tâche:","timestamp":"2024-07-23T19:45:14.237Z"}
+{"level":"info","message":"Résultat de l'opération de mise à jour:', [object Object]","timestamp":"2024-07-23T19:45:14.248Z"}
+{"level":"info","message":"ici on delete","timestamp":"2024-07-23T19:45:22.675Z"}
+{"level":"info","message":"Résultat de l'opération de suppression: [object Object]","timestamp":"2024-07-23T19:45:22.678Z"}
+{"level":"info","message":"Server is running on http://localhost:3000","timestamp":"2024-07-23T19:49:21.669Z"}
+{"level":"info","message":"MongoDB connected","timestamp":"2024-07-23T19:49:21.683Z"}
+{"body":{"__v":0,"_id":"6610de178fffbfa9148becdc","completed":false,"title":"ajouter un tri surezezez les tâches"},"level":"info","message":"Requête PUT reçue avec les données suivantes:","timestamp":"2024-07-23T19:49:37.569Z"}
+{"level":"info","message":"ID de la tâche: 6610de178fffbfa9148becdc","timestamp":"2024-07-23T19:49:37.569Z"}
+{"level":"info","message":"Résultat de l'opération de mise à jour:","result":{"acknowledged":true,"matchedCount":1,"modifiedCount":1,"upsertedCount":0,"upsertedId":null},"timestamp":"2024-07-23T19:49:37.582Z"}
+{"level":"info","message":"ici on delete","timestamp":"2024-07-23T19:49:52.559Z"}
+{"level":"info","message":"Résultat de l'opération de suppression:","result":{"acknowledged":true,"deletedCount":1},"timestamp":"2024-07-23T19:49:52.561Z"}
+{"acknowledged":true,"deletedCount":1,"level":"info","message":"Résultat de l'opération de suppression:","timestamp":"2024-07-23T19:49:52.561Z"}
