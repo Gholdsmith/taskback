@@ -28,13 +28,6 @@ app.post('/api/logs', (req, res) => {
   res.status(200).send({ status:'ok'});
 })
 
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Origin', '*');
-//   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
-//   res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-//   next();
-//   });
-  
   
   // Connect to MongoDB
   const mongoDB = process.env.MONGODB_URI || 'mongodb://localhost:27017/todoDB';
@@ -43,27 +36,12 @@ app.post('/api/logs', (req, res) => {
     .catch(err => logger.error('MongoDB connection error:', err));
 
 
-
-
-
 app.post('/register', userController.register);
 app.post('/login', userController.login);
 
 
-
 app.post('/tasks', taskController.createTask);
 app.get('/tasks', taskController.getTasks);
-
-
-// app.post('/tasks', authenticateToken, taskController.createTask);
-// app.get('/tasks', authenticateToken, taskController.getTasks);
-// app.get('/tasks:id', authenticateToken, taskController.getTaskById);
-// app.put('/task:id', authenticateToken, taskController.updateTask);
-
-
-
-
-
 app.get('/tasks/:id', taskController.getTaskById);
 app.put('/tasks/:id', taskController.updateTask);
 app.delete('/tasks/:id', taskController.deleteTask);
