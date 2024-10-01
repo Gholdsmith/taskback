@@ -22,7 +22,6 @@ const getTaskById = async (req, res) => {
 };
 
 
-
 //Mise à jour de la tâche
 const updateTask = async (req, res) => {
 
