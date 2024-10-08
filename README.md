@@ -4,7 +4,7 @@
 This is the backend for a multi-user task management application, built using Node.js and MongoDB. It handles user authentication, task management, and interaction with the database.
 
 ## Features
-- User authentication (login, registration)
+- User authentication (login)
 - Create, update, delete tasks
 - REST API endpoints
 
@@ -20,8 +20,7 @@ This is the backend for a multi-user task management application, built using No
 - **Authentication**: JWT
 
 ## Work in Progress
--login
--registration
+- Registration
 - Assign tasks to users
 - Real-time notifications
 - Implementing JWT-based security for authentication
