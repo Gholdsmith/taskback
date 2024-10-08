@@ -10,9 +10,9 @@ This is the backend for a multi-user task management application, built using No
 
 ## Installation
 1. Clone the repository: `git clone git@github.com:RaynalDev/taskback.git`
-2. Navigate to the directory: `cd taskManagerBackend`
+2. Navigate to the directory: `cd taskBack`
 3. Install dependencies: `npm install`
-4. Start the server: `npm start`
+4. Start the server: `node server.js`
 
 ## Technologies Used
 - **Backend**: Node.js
