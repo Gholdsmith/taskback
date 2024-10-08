@@ -6,7 +6,6 @@ This is the backend for a multi-user task management application, built using No
 ## Features
 - User authentication (login, registration)
 - Create, update, delete tasks
-- Assign tasks to users
 - REST API endpoints
 
 ## Installation
@@ -23,6 +22,7 @@ This is the backend for a multi-user task management application, built using No
 ## Work in Progress
 -login
 -registration
+- Assign tasks to users
 - Real-time notifications
 - Implementing JWT-based security for authentication
 
